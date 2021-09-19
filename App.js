@@ -1,21 +1,46 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {Component} from 'react'
+import { StyleSheet, Text, View } from 'react-native'
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+export default class App extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {}
+    console.log('constructor')
+  }
+
+  static getDerivedStateFromProps() {
+    console.log('getDerivedStateFromProps')
+  }
+
+  componentDidMount() {
+    console.log('componentDidMount')
+  }
+
+  render() {
+    console.log('render')
+    return (
+      <View style={styles.viewStyle}>
+        <Text style={styles.textStyle}>STAR GATE</Text>
+      </View>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+  viewStyle: {
+    backgroundColor: '#30d0fe',
+    height: 116,
+    justifyContent: 'center',
+    paddingLeft: 22,
+    paddingTop: 71,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    elevation: 2,
+    position: 'relative',
+  },
+  textStyle: {
     justifyContent: 'center',
   },
-});
+})
